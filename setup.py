@@ -2,7 +2,7 @@
 
 import sys
 from setuptools import setup
-import datalad_childrecords
+import datalad_childproject
 
 from _datalad_buildsupport.setup import (
     BuildManPage,
@@ -20,13 +20,13 @@ SETUP_REQUIRES = ['setuptools >= 30.3.0']
 SETUP_REQUIRES += ['wheel'] if 'bdist_wheel' in sys.argv else []
 
 if __name__ == '__main__':
-    setup(name='datalad_childrecords',
-          version=datalad_childrecords.__version__,
+    setup(name='datalad_childproject',
+          version=datalad_childproject.__version__,
           cmdclass=cmdclass,
           setup_requires=SETUP_REQUIRES,
           entry_points={
               'datalad.metadata.extractors': [
-                  'childrecords=datalad_childrecords.extractor:MetadataExtractor',
+                  'childproject=datalad_childproject.extractor:MetadataExtractor',
               ],
           },
     )
